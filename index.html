@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fast Food Menu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <img src="./images/logo.png" alt="Logo">
+        </div>
+    </header>
+    <h1>Menu</h1>
+    <div class="container">
+        <div class="item" id="tacos">
+            <div class="item1">
+                <h2>Tacos</h2>
+                <img src="./images/1.png" alt="">
+            </div>
+            <div class="rower">
+              <div class="card">
+                <p></p>
+                Spicy Tacos<br><br>
+                Beef Tacos<br><br>
+                Chicken Tacos<br><br>
+              </div>
+              <table>
+                <thead><tr><th>M</th><th>L</th><th>XL</th><th>XXL</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td>450 DA</td>
+                    <td>500 DA</td>
+                    <td>700 DA</td>
+                    <td>750 DA</td>
+                  </tr>
+                  <tr>
+                    <td>450 DA</td>
+                    <td>500 DA</td>
+                    <td>700 DA</td>
+                    <td>750 DA</td>
+                  </tr>
+                  <tr>
+                    <td>450 DA</td>
+                    <td>500 DA</td>
+                    <td>700 DA</td>
+                    <td>750 DA</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+        <div class="item" id="souffle">
+            <div class="item1">
+                <h2>Souflé</h2>
+                <img src="./images/3.png" alt="">
+            </div>
+            <div class="rower">
+              <div class="card">
+                <p></p>
+                  Cheese Souffle</label><br><br>
+                  Chocolate Souffle</label><br><br>
+                  Fruit Souffle</label><br><br>
+              </div>
+              <table>
+                <thead><tr><th>M</th><th>L</th><th>XL</th><th>XXL</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td>450 DA</td>
+                    <td>500 DA</td>
+                    <td>700 DA</td>
+                    <td>750 DA</td>
+                  </tr>
+                  <tr>
+                    <td>450 DA</td>
+                    <td>500 DA</td>
+                    <td>700 DA</td>
+                    <td>750 DA</td>
+                  </tr>
+                  <tr>
+                    <td>450 DA</td>
+                    <td>500 DA</td>
+                    <td>700 DA</td>
+                    <td>750 DA</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+        <div class="item" id="burgers">
+            <div class="item1">
+                <h2>Burger</h2>
+                <img src="./images/2.png" alt="">
+            </div>
+            <div class="rower">
+              <div class="card">
+                <p></p>
+                  Cheeseburger</label><br><br>
+                  Veggie Burger</label><br><br>
+                  Chicken Burger</label><br><br>
+              </div>
+              <table>
+                <thead><tr><th>M</th><th>L</th><th>XL</th><th>XXL</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td>450 DA</td>
+                    <td>500 DA</td>
+                    <td>700 DA</td>
+                    <td>750 DA</td>
+                  </tr>
+                  <tr>
+                    <td>450 DA</td>
+                    <td>500 DA</td>
+                    <td>700 DA</td>
+                    <td>750 DA</td>
+                  </tr>
+                  <tr>
+                    <td>450 DA</td>
+                    <td>500 DA</td>
+                    <td>700 DA</td>
+                    <td>750 DA</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+        <div class="item" id="panini">
+            <div class="item1">
+                <h2>Panini</h2>
+                <img src="./images/4.png" alt="">
+            </div>
+            <div class="rower">
+              <div class="card">
+                <p></p>
+                  Ham & Cheese Panini</label><br><br>
+                  Veggie Panini</label><br><br>
+                  Turkey Panini</label><br><br>
+              </div>
+              <table>
+                <thead><tr><th>M</th><th>L</th><th>XL</th><th>XXL</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td>450 DA</td>
+                    <td>500 DA</td>
+                    <td>700 DA</td>
+                    <td>750 DA</td>
+                  </tr>
+                  <tr>
+                    <td>450 DA</td>
+                    <td>500 DA</td>
+                    <td>700 DA</td>
+                    <td>750 DA</td>
+                  </tr>
+                  <tr>
+                    <td>450 DA</td>
+                    <td>500 DA</td>
+                    <td>700 DA</td>
+                    <td>750 DA</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+    <h2>Search and Add Items</h2>
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search for items...">
+        <button id="add-item-btn">Add Item</button>
+    </div>
+    <div id="selected-items-container">
+        <!-- Selected items will be displayed here -->
+    </div>
+    <h2>Select Table Number</h2>
+    <div class="table-selection">
+        <button id="select-table-btn">Select Table</button>
+        <!-- Table selection will be inserted here dynamically -->
+    </div>
+    <form id="order-form" action="https://script.google.com/macros/s/AKfycbygtaO6lvPC5uceOLqm8mG0GQ04I9IwA04vhz_m7d6BJyJNYiWfCzP5tCnUbPcCD4aP6A/exec" method="POST">
+      <div class="order-form">
+          <input type="hidden" id="selected-table" name="Table" readonly>
+          <textarea id="order-details" name="Product" required style="display: none;"></textarea>
+          <button id="order-btn" type="submit">Place Order</button>
+      </div>
+    </form>
+
+    <div id="table-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Select Table</h2>
+            <div class="tables">
+                <!-- Tables will be inserted here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
