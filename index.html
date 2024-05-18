@@ -59,9 +59,9 @@
             <div class="rower">
               <div class="card">
                 <p></p>
-                  Cheese Souffle</label><br><br>
-                  Chocolate Souffle</label><br><br>
-                  Fruit Souffle</label><br><br>
+                  Cheese Souffle<br><br>
+                  Chocolate Souffle<br><br>
+                  Fruit Souffle<br><br>
               </div>
               <table>
                 <thead><tr><th>M</th><th>L</th><th>XL</th><th>XXL</th></tr></thead>
@@ -96,9 +96,9 @@
             <div class="rower">
               <div class="card">
                 <p></p>
-                  Cheeseburger</label><br><br>
-                  Veggie Burger</label><br><br>
-                  Chicken Burger</label><br><br>
+                  Cheeseburger<br><br>
+                  Veggie Burger<br><br>
+                  Chicken Burger<br><br>
               </div>
               <table>
                 <thead><tr><th>M</th><th>L</th><th>XL</th><th>XXL</th></tr></thead>
@@ -133,9 +133,9 @@
             <div class="rower">
               <div class="card">
                 <p></p>
-                  Ham & Cheese Panini</label><br><br>
-                  Veggie Panini</label><br><br>
-                  Turkey Panini</label><br><br>
+                  Ham & Cheese Panini<br><br>
+                  Veggie Panini<br><br>
+                  Turkey Panini<br><br>
               </div>
               <table>
                 <thead><tr><th>M</th><th>L</th><th>XL</th><th>XXL</th></tr></thead>
@@ -176,11 +176,11 @@
         <button id="select-table-btn">Select Table</button>
         <!-- Table selection will be inserted here dynamically -->
     </div>
-    <form id="order-form" action="https://script.google.com/macros/s/AKfycbyAkuOmBGOBObg5doigmzrkriaOJTzS3ULQ66rRi2CK2mi9bJbmuKZv5SSgoFLxhUJI5A/exec" method="POST">
+    <form id="order-form" action="https://script.google.com/macros/s/AKfycbzGxdj-W4rptsnPdiw2K88yytuhN1rcx1ni6Tpjtv7Qusa5P7q2Ez5MuGwlOj6dTkje8w/exec" method="POST">
       <div class="order-form">
-          <input type="hidden" id="selected-table" name="Table" readonly>
-          <textarea type="hidden" id="order-details" name="Product" required style="display: none;"></textarea>
-          <button id="order-btn" type="submit">Place Order</button>
+          <input type="hidden" id="selected-table" name="selectedTable" readonly>
+          <textarea id="order-details" name="selectedProduct" required style="display: none;"></textarea>
+          <button type="submit">Place Order</button>
       </div>
     </form>
 
