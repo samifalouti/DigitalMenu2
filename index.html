@@ -7,11 +7,36 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-          <img src="./images/logo.png" alt="Logo">
+        <h2>Search and Add Items</h2>
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search for items...">
+        <button id="add-item-btn">Add Item</button>
+    </div>
+    <div id="selected-items-container">
+        <!-- Selected items will be displayed here -->
+    </div>
+    <h2>Select Table Number</h2>
+    <div class="table-selection">
+        <button id="select-table-btn">Select Table</button>
+        <!-- Table selection will be inserted here dynamically -->
+    </div>
+    <form id="order-form" action="https://script.google.com/macros/s/AKfycbzGxdj-W4rptsnPdiw2K88yytuhN1rcx1ni6Tpjtv7Qusa5P7q2Ez5MuGwlOj6dTkje8w/exec" method="POST">
+      <div class="order-form">
+          <input type="hidden" id="selected-table" name="selectedTable" readonly>
+          <textarea id="order-details" name="selectedProduct" required style="display: none;"></textarea>
+          <button type="submit">Place Order</button>
+      </div>
+    </form>
+
+    <div id="table-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Select Table</h2>
+            <div class="tables">
+                <!-- Tables will be inserted here dynamically -->
+            </div>
         </div>
-    </header>
+    </div>
     <h1>Menu</h1>
     <div class="container">
         <div class="item" id="tacos">
@@ -163,36 +188,7 @@
             </div>
         </div>
     </div>
-    <h2>Search and Add Items</h2>
-    <div class="search-container">
-        <input type="text" id="search-bar" placeholder="Search for items...">
-        <button id="add-item-btn">Add Item</button>
-    </div>
-    <div id="selected-items-container">
-        <!-- Selected items will be displayed here -->
-    </div>
-    <h2>Select Table Number</h2>
-    <div class="table-selection">
-        <button id="select-table-btn">Select Table</button>
-        <!-- Table selection will be inserted here dynamically -->
-    </div>
-    <form id="order-form" action="https://script.google.com/macros/s/AKfycbzGxdj-W4rptsnPdiw2K88yytuhN1rcx1ni6Tpjtv7Qusa5P7q2Ez5MuGwlOj6dTkje8w/exec" method="POST">
-      <div class="order-form">
-          <input type="hidden" id="selected-table" name="selectedTable" readonly>
-          <textarea id="order-details" name="selectedProduct" required style="display: none;"></textarea>
-          <button type="submit">Place Order</button>
-      </div>
-    </form>
 
-    <div id="table-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Select Table</h2>
-            <div class="tables">
-                <!-- Tables will be inserted here dynamically -->
-            </div>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
