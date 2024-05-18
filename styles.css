@@ -220,7 +220,7 @@ button {
 .search-container {
     display: flex;
     height: 50px;
-    width: 300px;
+    width: 350px;
 }
 
 .search-container button[id="add-item-btn"] {
