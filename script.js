@@ -59,9 +59,9 @@ document.addEventListener('DOMContentLoaded', function() {
         removeBtn.appendChild(removeIcon);
 
         removeBtn.addEventListener('click', () => {
-        itemDiv.remove();
-        updateOrderDetails();
-      });
+            itemDiv.remove();
+            updateOrderDetails();
+        });
 
         const quantityInput = document.createElement('input');
         quantityInput.type = 'number';
@@ -93,7 +93,8 @@ document.addEventListener('DOMContentLoaded', function() {
     orderForm.addEventListener('submit', (event) => {
         if (document.getElementById('selected-table').value === '') {
             event.preventDefault();
-            alert('Please select a table before placing the order.');
+            alert('Veuillez sélectionner une table avant de passer la commande.');
         }
+        
     });
 });
