@@ -7,36 +7,36 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-        <h2>Search and Add Items</h2>
-    <div class="search-container">
-        <input type="text" id="search-bar" placeholder="Search for items...">
-        <button id="add-item-btn">Add Item</button>
+  <h2>Ajouter des éléments</h2>
+  <div class="search-container">
+      <input type="text" id="search-bar" placeholder="Rechercher des éléments...">
+      <button id="add-item-btn">Ajouter</button>
+  </div>
+  <div id="selected-items-container">
+      <!-- Selected items will be displayed here -->
+  </div>
+  <h2>Sélectionner le numéro de la Table</h2>
+  <div class="table-selection">
+      <button id="select-table-btn">Sélectionner une Table</button>
+      <!-- Table selection will be inserted here dynamically -->
+  </div>
+  <form id="order-form" action="https://script.google.com/macros/s/AKfycbzGxdj-W4rptsnPdiw2K88yytuhN1rcx1ni6Tpjtv7Qusa5P7q2Ez5MuGwlOj6dTkje8w/exec" method="POST">
+    <div class="order-form">
+        <input type="hidden" id="selected-table" name="selectedTable" readonly>
+        <textarea id="order-details" name="selectedProduct" required style="display: none;"></textarea>
+        <button type="submit">Commander</button>
     </div>
-    <div id="selected-items-container">
-        <!-- Selected items will be displayed here -->
-    </div>
-    <h2>Select Table Number</h2>
-    <div class="table-selection">
-        <button id="select-table-btn">Select Table</button>
-        <!-- Table selection will be inserted here dynamically -->
-    </div>
-    <form id="order-form" action="https://script.google.com/macros/s/AKfycbzGxdj-W4rptsnPdiw2K88yytuhN1rcx1ni6Tpjtv7Qusa5P7q2Ez5MuGwlOj6dTkje8w/exec" method="POST">
-      <div class="order-form">
-          <input type="hidden" id="selected-table" name="selectedTable" readonly>
-          <textarea id="order-details" name="selectedProduct" required style="display: none;"></textarea>
-          <button type="submit">Place Order</button>
-      </div>
-    </form>
+  </form>
 
-    <div id="table-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Select Table</h2>
-            <div class="tables">
-                <!-- Tables will be inserted here dynamically -->
-            </div>
-        </div>
-    </div>
+  <div id="table-modal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Sélectionner une Table</h2>
+          <div class="tables">
+              <!-- Tables will be inserted here dynamically -->
+          </div>
+      </div>
+  </div>
     <h1>Menu</h1>
     <div class="container">
         <div class="item" id="tacos">
@@ -158,7 +158,7 @@
             <div class="rower">
               <div class="card">
                 <p></p>
-                  Ham & Cheese Panini<br><br>
+                  Cheese Panini<br><br>
                   Veggie Panini<br><br>
                   Turkey Panini<br><br>
               </div>
@@ -188,7 +188,6 @@
             </div>
         </div>
     </div>
-
 
     <script src="script.js"></script>
 </body>
