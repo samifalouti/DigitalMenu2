@@ -5,10 +5,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const tableModalContent = document.querySelector('.modal-content');
     const addItemBtn = document.getElementById('add-item-btn');
     const searchBar = document.getElementById('search-bar');
+    const searchDropdown = document.getElementById('search-dropdown');
     const selectedItemsContainer = document.getElementById('selected-items-container');
     const orderDetails = document.getElementById('order-details');
     const orderForm = document.getElementById('order-form');
     const tables = ['Table 1', 'Table 2', 'Table 3', 'Table 4', 'Table 5', 'Table 6', 'Table 7', 'Table 8', 'Table 9', 'Table 10'];
+
+    const menuItems = ['Spicy Tacos M', 'Spicy Tacos L', 'Spicy Tacos XL', 'Spicy Tacos XXL',
+                       'Beef Tacos M', 'Beef Tacos L', 'Beef Tacos XL', 'Beef Tacos XXL',
+                       'Chicken Tacos M', 'Chicken Tacos L', 'Chicken Tacos XL', 'Chicken Tacos XXL',
+                       'Cheese Souffle M', 'Cheese Souffle L', 'Cheese Souffle XL', 'Cheese Souffle XXL',
+                       'Chocolate Souffle M', 'Chocolate Souffle L', 'Chocolate Souffle XL', 'Chocolate Souffle XXL',
+                       'Fruit Souffle M', 'Fruit Souffle L', 'Fruit Souffle XL', 'Fruit Souffle XXL',
+                       'Cheeseburger M', 'Cheeseburger L', 'Cheeseburger XL', 'Cheeseburger XXL',
+                       'Veggie Burger M', 'Veggie Burger L', 'Veggie Burger XL', 'Veggie Burger XXL',
+                       'Chicken Burger M', 'Chicken Burger L', 'Chicken Burger XL', 'Chicken Burger XXL',
+                       'Cheese Panini M', 'Cheese Panini L', 'Cheese Panini XL', 'Cheese Panini XXL',
+                       'Veggie Panini M', 'Veggie Panini L', 'Veggie Panini XL', 'Veggie Panini XXL',
+                       'Turkey Panini M', 'Turkey Panini L', 'Turkey Panini XL', 'Turkey Panini XXL'];
 
     // Populate table selection
     tables.forEach(table => {
@@ -21,6 +35,38 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('selected-table').value = table;
         });
         tableModalContent.querySelector('.tables').appendChild(tableDiv);
+    });
+
+    menuItems.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.textContent = item;
+        itemDiv.addEventListener('click', () => {
+            searchBar.value = item;
+            searchDropdown.classList.remove('show');
+        });
+        searchDropdown.appendChild(itemDiv);
+    });
+
+    searchBar.addEventListener('input', () => {
+        const filter = searchBar.value.toLowerCase();
+        const items = searchDropdown.querySelectorAll('div');
+        let anyVisible = false;
+        items.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            if (text.includes(filter)) {
+                item.style.display = '';
+                anyVisible = true;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+        searchDropdown.classList.toggle('show', anyVisible);
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!searchBar.contains(event.target) && !searchDropdown.contains(event.target)) {
+            searchDropdown.classList.remove('show');
+        }
     });
 
     // Open table selection modal
