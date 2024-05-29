@@ -139,12 +139,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle form submission
     orderForm.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent the form from submitting the traditional way
-
+    
         if (document.getElementById('selected-table').value === '') {
             alert('Veuillez sélectionner une table avant de passer la commande.');
             return;
         }
-
+    
         var formData = new FormData(this);
     
         fetch(this.action, {
@@ -159,8 +159,10 @@ document.addEventListener('DOMContentLoaded', function() {
             selectedItemsContainer.innerHTML = ''; // Clear selected items
             setTimeout(() => {
                 successMessage.style.display = 'none'; // Hide the success message after 3 seconds
+                location.reload(); // Refresh the website
             }, 3000);
         })
         .catch(error => console.error('Error!', error.message));
     });
+    
 });
