@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectedItemsContainer = document.getElementById('selected-items-container');
     const orderDetails = document.getElementById('order-details');
     const orderForm = document.getElementById('order-form');
+    const successMessage = document.getElementById('success-message');
     const tables = ['Table 1', 'Table 2', 'Table 3', 'Table 4', 'Table 5', 'Table 6', 'Table 7', 'Table 8', 'Table 9', 'Table 10'];
 
     const menuItems = ['Spicy Tacos M', 'Spicy Tacos L', 'Spicy Tacos XL', 'Spicy Tacos XXL',
@@ -136,11 +137,30 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Handle form submission
-    orderForm.addEventListener('submit', (event) => {
+    orderForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting the traditional way
+
         if (document.getElementById('selected-table').value === '') {
-            event.preventDefault();
             alert('Veuillez sélectionner une table avant de passer la commande.');
+            return;
         }
-        
+
+        var formData = new FormData(this);
+    
+        fetch(this.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(result => {
+            successMessage.style.display = 'block'; // Show the success message
+            orderForm.reset(); // Reset the form if needed
+            tableSelection.innerHTML = ''; // Clear selected table
+            selectedItemsContainer.innerHTML = ''; // Clear selected items
+            setTimeout(() => {
+                successMessage.style.display = 'none'; // Hide the success message after 3 seconds
+            }, 3000);
+        })
+        .catch(error => console.error('Error!', error.message));
     });
 });
